@@ -25,7 +25,7 @@ const transport = nodemailer.createTransport({
 app.get("/mail", async (req, res) => {
   const result = await transport.sendMail({
     from: process.env.GOOGLE_EMAIL,
-    to: "guillermofergnani@gmail.com",
+    to: "tosibautista@gmail.com",
     subject: "Perdon me faltaba algo",
     html: `
               <div>
@@ -33,13 +33,13 @@ app.get("/mail", async (req, res) => {
                   <img src="cid:image1" />
               </div>
           `,
-    attachments: [
+    /* attachments: [
       {
         filename: "image1.gif",
         path: __dirname + "/images/image1.gif",
         cid: "image1",
       },
-    ],
+    ], */
   });
 
   console.log(result);
@@ -49,7 +49,7 @@ app.get("/mail", async (req, res) => {
 ////////////////////////////////////////////////////////
 //--------------------TWILIO----------------------------
 ////////////////////////////////////////////////////////
-import twilio from "twilio";
+/* import twilio from "twilio";
 
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
@@ -68,4 +68,6 @@ app.get("/sms", async (req, res) => {
   res.send("SMS sent");
 });
 
-app.listen(8080, () => console.log("http://localhost:8080"));
+
+; */
+app.listen(8080, () => console.log("http://localhost:8080"))
